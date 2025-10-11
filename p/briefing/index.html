@@ -108,37 +108,37 @@
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                             <label class="flex items-center bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-blue-50 transition">
-                                <input type="checkbox" name="pages[]" value="landing" class="hidden">
+                                <input type="checkbox" name="pages" value="landing" class="hidden">
                                 <div class="checkmark"></div>
                                 <span>Página de Vendas / Landing Page</span>
                             </label>
                             
                             <label class="flex items-center bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-blue-50 transition">
-                                <input type="checkbox" name="pages[]" value="institucional" class="hidden">
+                                <input type="checkbox" name="pages" value="institucional" class="hidden">
                                 <div class="checkmark"></div>
                                 <span>Página Institucional</span>
                             </label>
                             
                             <label class="flex items-center bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-blue-50 transition">
-                                <input type="checkbox" name="pages[]" value="servicos" class="hidden">
+                                <input type="checkbox" name="pages" value="servicos" class="hidden">
                                 <div class="checkmark"></div>
                                 <span>Página de Serviços</span>
                             </label>
                             
                             <label class="flex items-center bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-blue-50 transition">
-                                <input type="checkbox" name="pages[]" value="produto" class="hidden">
+                                <input type="checkbox" name="pages" value="produto" class="hidden">
                                 <div class="checkmark"></div>
                                 <span>Página de Produto</span>
                             </label>
                             
                             <label class="flex items-center bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-blue-50 transition">
-                                <input type="checkbox" name="pages[]" value="contato" class="hidden">
+                                <input type="checkbox" name="pages" value="contato" class="hidden">
                                 <div class="checkmark"></div>
                                 <span>Página de Contato</span>
                             </label>
                             
                             <label class="flex items-center bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-blue-50 transition">
-                                <input type="checkbox" name="pages[]" value="captura" class="hidden">
+                                <input type="checkbox" name="pages" value="captura" class="hidden">
                                 <div class="checkmark"></div>
                                 <span>Página de Captura / Lead Magnet</span>
                             </label>
@@ -262,31 +262,31 @@
                             <p class="text-lg font-medium text-gray-700 mb-3">a) Você já possui algum material que deve ser usado no site?</p>
                             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                                 <label class="flex items-center">
-                                    <input type="checkbox" name="materials[]" value="logos" class="hidden">
+                                    <input type="checkbox" name="materials" value="logos" class="hidden">
                                     <div class="checkmark"></div>
                                     <span>Logos</span>
                                 </label>
                                 
                                 <label class="flex items-center">
-                                    <input type="checkbox" name="materials[]" value="images" class="hidden">
+                                    <input type="checkbox" name="materials" value="images" class="hidden">
                                     <div class="checkmark"></div>
                                     <span>Imagens</span>
                                 </label>
                                 
                                 <label class="flex items-center">
-                                    <input type="checkbox" name="materials[]" value="videos" class="hidden">
+                                    <input type="checkbox" name="materials" value="videos" class="hidden">
                                     <div class="checkmark"></div>
                                     <span>Vídeos</span>
                                 </label>
                                 
                                 <label class="flex items-center">
-                                    <input type="checkbox" name="materials[]" value="pdfs" class="hidden">
+                                    <input type="checkbox" name="materials" value="pdfs" class="hidden">
                                     <div class="checkmark"></div>
                                     <span>PDFs / Apresentações</span>
                                 </label>
                                 
                                 <label class="flex items-center">
-                                    <input type="checkbox" name="materials[]" value="other" class="hidden">
+                                    <input type="checkbox" name="materials" value="other" class="hidden">
                                     <div class="checkmark"></div>
                                     <span>Outros</span>
                                     <input type="text" name="other_materials" class="ml-2 px-2 py-1 border border-gray-300 rounded" placeholder="especifique">
@@ -661,7 +661,7 @@
                 data.timestamp = new Date().toLocaleString('pt-BR');
 
                 try {
-                    await fetch("https://script.google.com/macros/s/AKfycbwWYu2Pyi2rzyqwLZshih-T7mj5DaSMJq082lYX-QqYPUSYVxoVbqH6WOvvgwsO5TEzYw/exec", {
+                    await fetch("https://script.google.com/macros/s/AKfycbzNpZoM9zy7epx2sHNOfmhdHsaN-kytD2QdFnGLnsRLlX6KQKCNcjc0BLg_WyfaxbhtyQ/exec", {
                         method: "POST",
                         mode: "no-cors",
                         headers: { "Content-Type": "application/json" },
