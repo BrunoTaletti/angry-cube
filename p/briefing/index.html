@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Angry Cube - Briefing Digital</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+        <link rel="shortcut icon" href="./../img/icon.svg" type="image/x-icon">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+            
+            body {
+                font-family: 'Montserrat', sans-serif;
+                background-color: #f8f9fa;
+            }
+
+            .logo{
+                width: 100%;
+            }
+            
+            .textured-bg {
+                background-image: url('./../img/background.jpg');
+                background-blend-mode: overlay;
+                background-size:contain;
+                background-position: center;
+            }
+            
+            .input-focus-effect:focus {
+                box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+            }
+            
+            .file-upload {
+                position: relative;
+                overflow: hidden;
+                display: inline-block;
+            }
+            
+            .file-upload input[type="file"] {
+                position: absolute;
+                left: 0;
+                top: 0;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+            }
+            
+            .checkmark {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                border: 2px solid #1e40af;
+                border-radius: 4px;
+                margin-right: 10px;
+                position: relative;
+                vertical-align: middle;
+            }
+            
+            input[type="checkbox"]:checked + .checkmark:after {
+                content: "";
+                position: absolute;
+                left: 5px;
+                top: 1px;
+                width: 6px;
+                height: 12px;
+                border: solid #1e40af;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+            
+            input[type="checkbox"] {
+                opacity: 0;
+                position: absolute;
+            }
+            
+            .section-divider {
+                height: 1px;
+                background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+                margin: 2rem 0;
+            }
+        </style>
+    </head>
+    <body class="min-h-screen bg-gray-50">
+        <div class="textured-bg bg-blue-900 bg-opacity-90 py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <div class="flex justify-center mb-6">
+                        <div class="p-4 flex items-center justify-center">
+                            <img src="./../img/angry-cube-logo.svg" alt="Logo" class="logo">
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <div class="inline-flex items-center bg-blue-800 text-white px-4 py-2 rounded-full">
+                            <i data-feather="lock" class="w-5 h-5 mr-2"></i>
+                            <span>Formulário Seguro</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="bg-white rounded-xl shadow-2xl overflow-hidden">                
+                    <!-- Section 1: Páginas Contratadas -->
+                    <div class="p-8 border-b border-gray-200">
+                        <h1 class="text-3xl text-center font-semibold text-blue-900 mb-6">Briefing Digital</h1>
+                        <h2 class="text-2xl font-semibold text-blue-900 mb-6">1. Sobre as páginas contratadas</h2>
+                        <p class="text-gray-700 mb-6">Quais são as duas páginas contratadas? (Marque as duas que fazem parte do projeto ou escreva se forem diferentes)</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <label class="flex items-center bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-blue-50 transition">
+                                <input type="checkbox" name="pages[]" value="landing" class="hidden">
+                                <div class="checkmark"></div>
+                                <span>Página de Vendas / Landing Page</span>
+                            </label>
+                            
+                            <label class="flex items-center bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-blue-50 transition">
+                                <input type="checkbox" name="pages[]" value="institucional" class="hidden">
+                                <div class="checkmark"></div>
+                                <span>Página Institucional</span>
+                            </label>
+                            
+                            <label class="flex items-center bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-blue-50 transition">
+                                <input type="checkbox" name="pages[]" value="servicos" class="hidden">
+                                <div class="checkmark"></div>
+                                <span>Página de Serviços</span>
+                            </label>
+                            
+                            <label class="flex items-center bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-blue-50 transition">
+                                <input type="checkbox" name="pages[]" value="produto" class="hidden">
+                                <div class="checkmark"></div>
+                                <span>Página de Produto</span>
+                            </label>
+                            
+                            <label class="flex items-center bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-blue-50 transition">
+                                <input type="checkbox" name="pages[]" value="contato" class="hidden">
+                                <div class="checkmark"></div>
+                                <span>Página de Contato</span>
+                            </label>
+                            
+                            <label class="flex items-center bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-blue-50 transition">
+                                <input type="checkbox" name="pages[]" value="captura" class="hidden">
+                                <div class="checkmark"></div>
+                                <span>Página de Captura / Lead Magnet</span>
+                            </label>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <label for="other-pages" class="block text-sm font-medium text-gray-700 mb-1">Outra (especifique):</label>
+                            <input type="text" id="other-pages" name="other_pages" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect">
+                        </div>
+                    </div>
+                    
+                    <!-- Section 2: Página 1 -->
+                    <div class="p-8 border-b border-gray-200">
+                        <h2 class="text-2xl font-semibold text-blue-900 mb-6">2. Página 1</h2>
+                        
+                        <div class="mb-6">
+                            <label for="page1-objective" class="block text-lg font-medium text-gray-700 mb-2">a) Qual o objetivo principal dessa página?</label>
+                            <textarea id="page1-objective" name="page1_objective" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="ex: gerar conversão, apresentar um produto, explicar um serviço, etc."></textarea>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="page1-sections" class="block text-lg font-medium text-gray-700 mb-2">b) Quais sessões essa página precisa ter?</label>
+                            <textarea id="page1-sections" name="page1_sections" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="Liste todas: ex: herói, depoimentos, sobre, CTA, dúvidas, etc."></textarea>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="page1-musthave" class="block text-lg font-medium text-gray-700 mb-2">c) Há alguma seção ou conteúdo que você faz questão de ter?</label>
+                            <textarea id="page1-musthave" name="page1_musthave" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="ex: um vídeo, frase específica, elementos gráficos, etc."></textarea>
+                        </div>
+                        
+                        <div>
+                            <label for="page1-exclude" class="block text-lg font-medium text-gray-700 mb-2">d) Deseja que algo não esteja presente nessa página?</label>
+                            <textarea id="page1-exclude" name="page1_exclude" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="ex: preços, depoimentos, excesso de texto, etc."></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 3: Página 2 -->
+                    <div class="p-8 border-b border-gray-200">
+                        <h2 class="text-2xl font-semibold text-blue-900 mb-6">3. Página 2</h2>
+                        
+                        <div class="mb-6">
+                            <label for="page2-objective" class="block text-lg font-medium text-gray-700 mb-2">a) Qual o objetivo principal dessa página?</label>
+                            <textarea id="page2-objective" name="page2_objective" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect"></textarea>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="page2-sections" class="block text-lg font-medium text-gray-700 mb-2">b) Quais sessões essa página precisa ter?</label>
+                            <textarea id="page2-sections" name="page2_sections" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect"></textarea>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="page2-musthave" class="block text-lg font-medium text-gray-700 mb-2">c) Há alguma seção ou conteúdo que você faz questão de ter?</label>
+                            <textarea id="page2-musthave" name="page2_musthave" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label for="page2-exclude" class="block text-lg font-medium text-gray-700 mb-2">d) Deseja que algo não esteja presente nessa página?</label>
+                            <textarea id="page2-exclude" name="page2_exclude" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 4: Design -->
+                    <div class="p-8 border-b border-gray-200">
+                        <h2 class="text-2xl font-semibold text-blue-900 mb-6">4. Preferências de Design e Identidade Visual</h2>
+                        
+                        <div class="mb-6">
+                            <p class="text-lg font-medium text-gray-700 mb-3">a) Possui manual de marca?</p>
+                            <div class="flex flex-wrap gap-4">
+                                <label class="flex items-center">
+                                    <input type="radio" name="brand_manual" value="yes" class="hidden">
+                                    <div class="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center mr-2">
+                                        <div class="w-3 h-3 rounded-full bg-blue-600 hidden radio-check"></div>
+                                    </div>
+                                    <span>Sim (anexar)</span>
+                                </label>
+                                
+                                <label class="flex items-center">
+                                    <input type="radio" name="brand_manual" value="no" class="hidden">
+                                    <div class="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center mr-2">
+                                        <div class="w-3 h-3 rounded-full bg-blue-600 hidden radio-check"></div>
+                                    </div>
+                                    <span>Não</span>
+                                </label>
+                                
+                                <label class="flex items-center">
+                                    <input type="radio" name="brand_manual" value="base" class="hidden">
+                                    <div class="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center mr-2">
+                                        <div class="w-3 h-3 rounded-full bg-blue-600 hidden radio-check"></div>
+                                    </div>
+                                    <span>Não, mas podemos usar o que já existe como base</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="typography" class="block text-lg font-medium text-gray-700 mb-2">b) Qual é a tipografia (fonte) da marca? Se não tiver, há alguma preferência?</label>
+                            <input type="text" id="typography" name="typography" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="colors" class="block text-lg font-medium text-gray-700 mb-2">c) Quais são as cores principais que devemos usar?</label>
+                            <input type="text" id="colors" name="colors" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="ex: Azul marinho (#1E3A8A), Dourado (#D4AF37)">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="avoid-colors" class="block text-lg font-medium text-gray-700 mb-2">d) Há cores, elementos ou estilos que não podem ser usados?</label>
+                            <input type="text" id="avoid-colors" name="avoid_colors" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect">
+                        </div>
+                        
+                        <div>
+                            <label for="visual-style" class="block text-lg font-medium text-gray-700 mb-2">e) Há algum estilo visual que você espera?</label>
+                            <textarea id="visual-style" name="visual_style" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="ex: minimalista, moderno, colorido, elegante, etc."></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 5: Conteúdo -->
+                    <div class="p-8 border-b border-gray-200">
+                        <h2 class="text-2xl font-semibold text-blue-900 mb-6">5. Conteúdo e Materiais</h2>
+                        
+                        <div class="mb-6">
+                            <p class="text-lg font-medium text-gray-700 mb-3">a) Você já possui algum material que deve ser usado no site?</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="materials[]" value="logos" class="hidden">
+                                    <div class="checkmark"></div>
+                                    <span>Logos</span>
+                                </label>
+                                
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="materials[]" value="images" class="hidden">
+                                    <div class="checkmark"></div>
+                                    <span>Imagens</span>
+                                </label>
+                                
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="materials[]" value="videos" class="hidden">
+                                    <div class="checkmark"></div>
+                                    <span>Vídeos</span>
+                                </label>
+                                
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="materials[]" value="pdfs" class="hidden">
+                                    <div class="checkmark"></div>
+                                    <span>PDFs / Apresentações</span>
+                                </label>
+                                
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="materials[]" value="other" class="hidden">
+                                    <div class="checkmark"></div>
+                                    <span>Outros</span>
+                                    <input type="text" name="other_materials" class="ml-2 px-2 py-1 border border-gray-300 rounded" placeholder="especifique">
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="material-instructions" class="block text-lg font-medium text-gray-700 mb-2">Se sim, por favor envie os arquivos ou o link para download:</label>
+                            <textarea id="material-instructions" name="material_instructions" rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="Link ou instruções de envio"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label for="text-inclusions" class="block text-lg font-medium text-gray-700 mb-2">b) Os textos serão escritos pela nossa equipe, mas há algo que você gostaria de garantir que esteja incluído?</label>
+                            <textarea id="text-inclusions" name="text_inclusions" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 6: Produto/Serviço -->
+                    <div class="p-8 border-b border-gray-200">
+                        <h2 class="text-2xl font-semibold text-blue-900 mb-6">6. Produto/Serviço</h2>
+                        
+                        <div>
+                            <label for="product-service" class="block text-lg font-medium text-gray-700 mb-2">a) Qual é o produto ou serviço sendo apresentado neste projeto?</label>
+                            <textarea id="product-service" name="product_service" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="Descreva com o máximo de clareza: o que é, para quem é, o que resolve, diferenciais, etc."></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 7: Inspirações -->
+                    <div class="p-8 border-b border-gray-200">
+                        <h2 class="text-2xl font-semibold text-blue-900 mb-6">7. Inspirações e Referências</h2>
+                        
+                        <div class="mb-6">
+                            <label class="block text-lg font-medium text-gray-700 mb-2">a) Quais são 3 a 5 sites de referência que você gosta e gostaria que servisse de inspiração?</label>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label for="reference1" class="block text-sm font-medium text-gray-500 mb-1">Site 1:</label>
+                                    <input type="url" id="reference1" name="reference1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="https://">
+                                </div>
+                                
+                                <div>
+                                    <label for="reference2" class="block text-sm font-medium text-gray-500 mb-1">Site 2:</label>
+                                    <input type="url" id="reference2" name="reference2" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="https://">
+                                </div>
+                                
+                                <div>
+                                    <label for="reference3" class="block text-sm font-medium text-gray-500 mb-1">Site 3:</label>
+                                    <input type="url" id="reference3" name="reference3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="https://">
+                                </div>
+                                
+                                <div>
+                                    <label for="reference4" class="block text-sm font-medium text-gray-500 mb-1">Site 4 (opcional):</label>
+                                    <input type="url" id="reference4" name="reference4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="https://">
+                                </div>
+                                
+                                <div>
+                                    <label for="reference5" class="block text-sm font-medium text-gray-500 mb-1">Site 5 (opcional):</label>
+                                    <input type="url" id="reference5" name="reference5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="https://">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="reference-details" class="block text-lg font-medium text-gray-700 mb-2">b) Algum detalhe específico dessas referências que você gostaria de reproduzir?</label>
+                            <textarea id="reference-details" name="reference_details" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label for="reference-avoid" class="block text-lg font-medium text-gray-700 mb-2">c) Tem algo que você viu em outros sites que NÃO quer no seu?</label>
+                            <textarea id="reference-avoid" name="reference_avoid" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 8: Tecnologia -->
+                    <div class="p-8 border-b border-gray-200">
+                        <h2 class="text-2xl font-semibold text-blue-900 mb-6">8. Preferência de tecnologia ou limitações</h2>
+                        
+                        <div class="mb-6">
+                            <label for="tech-preference" class="block text-lg font-medium text-gray-700 mb-2">a) Você possui alguma preferência em relação à tecnologia usada no site?</label>
+                            <input type="text" id="tech-preference" name="tech_preference" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="ex: Wordpress, Webflow, HTML/CSS puro, outro">
+                        </div>
+                        
+                        <div>
+                            <label for="tech-limitations" class="block text-lg font-medium text-gray-700 mb-2">b) Existe alguma limitação técnica ou exigência específica?</label>
+                            <textarea id="tech-limitations" name="tech_limitations" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="ex: precisa rodar em hospedagem X, integração com sistema Y, etc."></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 9: Posicionamento -->
+                    <div class="p-8 border-b border-gray-200">
+                        <h2 class="text-2xl font-semibold text-blue-900 mb-6">9. Posicionamento e Percepção de Marca</h2>
+                        
+                        <div class="mb-6">
+                            <label for="brand-vision" class="block text-lg font-medium text-gray-700 mb-2">a) Qual é a visão que você quer transmitir com esse site?</label>
+                            <input type="text" id="brand-vision" name="brand_vision" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="ex: autoridade, proximidade, inovação, exclusividade, confiança, etc.">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="user-feeling" class="block text-lg font-medium text-gray-700 mb-2">b) Como você quer que as pessoas se sintam ao navegar pelo seu site?</label>
+                            <input type="text" id="user-feeling" name="user_feeling" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="ex: inspiradas, seguras, curiosas, motivadas, confiantes, acolhidas...">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="target-audience" class="block text-lg font-medium text-gray-700 mb-2">c) Quem é o público-alvo deste site?</label>
+                            <textarea id="target-audience" name="target_audience" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="Se possível, descreva faixa etária, perfil profissional, interesses, nível de consciência, etc."></textarea>
+                        </div>
+                        
+                        <div>
+                            <label for="brand-perception" class="block text-lg font-medium text-gray-700 mb-2">d) Como você gostaria de ser visto por esse público?</label>
+                            <input type="text" id="brand-perception" name="brand_perception" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="ex: como especialista, referência acessível, premium, disruptivo, tradicional, etc.">
+                        </div>
+                    </div>
+                    
+                    <!-- Section 10: Domínio -->
+                    <div class="p-8">
+                        <h2 class="text-2xl font-semibold text-blue-900 mb-6">10. Domínio e Hospedagem</h2>
+                        
+                        <div class="mb-6">
+                            <p class="text-lg font-medium text-gray-700 mb-3">a) Você já possui um domínio registrado?</p>
+                            
+                            <div class="flex flex-wrap items-center gap-4 mb-4">
+                                <label class="flex items-center">
+                                    <input type="radio" name="has_domain" value="yes" class="hidden">
+                                    <div class="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center mr-2">
+                                        <div class="w-3 h-3 rounded-full bg-blue-600 hidden radio-check"></div>
+                                    </div>
+                                    <span>Sim</span>
+                                </label>
+                                
+                                <div class="hidden domain-field">
+                                    <label for="domain" class="text-sm font-medium text-gray-500 mr-2">Qual é o domínio?</label>
+                                    <input type="text" id="domain" name="domain" class="px-3 py-1 border border-gray-300 rounded" placeholder="www.suaempresa.com">
+                                </div>
+                                
+                                <label class="flex items-center">
+                                    <input type="radio" name="has_domain" value="no" class="hidden">
+                                    <div class="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center mr-2">
+                                        <div class="w-3 h-3 rounded-full bg-blue-600 hidden radio-check"></div>
+                                    </div>
+                                    <span>Não</span>
+                                </label>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm font-medium text-gray-500">Precisa de ajuda para registrar?</span>
+                                <label class="flex items-center">
+                                    <input type="radio" name="help_register" value="yes" class="hidden">
+                                    <div class="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center mr-2">
+                                        <div class="w-3 h-3 rounded-full bg-blue-600 hidden radio-check"></div>
+                                    </div>
+                                    <span>Sim</span>
+                                </label>
+                                
+                                <label class="flex items-center">
+                                    <input type="radio" name="help_register" value="no" class="hidden">
+                                    <div class="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center mr-2">
+                                        <div class="w-3 h-3 rounded-full bg-blue-600 hidden radio-check"></div>
+                                    </div>
+                                    <span>Não</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <p class="text-lg font-medium text-gray-700 mb-3">b) Já possui hospedagem contratada?</p>
+                            
+                            <div class="flex flex-wrap items-center gap-4 mb-4">
+                                <label class="flex items-center">
+                                    <input type="radio" name="has_hosting" value="yes" class="hidden">
+                                    <div class="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center mr-2">
+                                        <div class="w-3 h-3 rounded-full bg-blue-600 hidden radio-check"></div>
+                                    </div>
+                                    <span>Sim</span>
+                                </label>
+                                
+                                <div class="hidden hosting-field">
+                                    <label for="hosting-provider" class="text-sm font-medium text-gray-500 mr-2">Qual provedor?</label>
+                                    <input type="text" id="hosting-provider" name="hosting_provider" class="px-3 py-1 border border-gray-300 rounded">
+                                </div>
+                                
+                                <div class="hidden hosting-access ml-4">
+                                    <span class="text-sm font-medium text-gray-500 mr-2">Acesso será fornecido?</span>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="hosting_access" value="yes" class="hidden">
+                                        <div class="w-4 h-4 rounded-full border-2 border-blue-600 flex items-center justify-center mr-1">
+                                            <div class="w-2 h-2 rounded-full bg-blue-600 hidden radio-check"></div>
+                                        </div>
+                                        <span>Sim</span>
+                                    </label>
+                                    
+                                    <label class="flex items-center ml-2">
+                                        <input type="radio" name="hosting_access" value="no" class="hidden">
+                                        <div class="w-4 h-4 rounded-full border-2 border-blue-600 flex items-center justify-center mr-1">
+                                            <div class="w-2 h-2 rounded-full bg-blue-600 hidden radio-check"></div>
+                                        </div>
+                                        <span>Não</span>
+                                    </label>
+                                </div>
+                                
+                                <label class="flex items-center">
+                                    <input type="radio" name="has_hosting" value="no" class="hidden">
+                                    <div class="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center mr-2">
+                                        <div class="w-3 h-3 rounded-full bg-blue-600 hidden radio-check"></div>
+                                    </div>
+                                    <span>Não</span>
+                                </label>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm font-medium text-gray-500">Precisa de indicação ou contratação?</span>
+                                <label class="flex items-center">
+                                    <input type="radio" name="hosting_help" value="yes" class="hidden">
+                                    <div class="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center mr-2">
+                                        <div class="w-3 h-3 rounded-full bg-blue-600 hidden radio-check"></div>
+                                    </div>
+                                    <span>Sim</span>
+                                </label>
+                                
+                                <label class="flex items-center">
+                                    <input type="radio" name="hosting_help" value="no" class="hidden">
+                                    <div class="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center mr-2">
+                                        <div class="w-3 h-3 rounded-full bg-blue-600 hidden radio-check"></div>
+                                    </div>
+                                    <span>Não</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="cms-preference" class="block text-lg font-medium text-gray-700 mb-2">c) Tem preferência de tecnologia, plataforma ou CMS?</label>
+                            <input type="text" id="cms-preference" name="cms_preference" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 input-focus-effect" placeholder="ex: Wordpress, Webflow, HTML estático, Wix, etc.">
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Section -->
+                    <div class="p-8 bg-blue-50 rounded-b-xl">
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="agree-terms" name="agree_terms" class="hidden">
+                                <label for="agree-terms" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 border-2 border-blue-600 rounded flex items-center justify-center mr-3">
+                                        <svg class="w-4 h-4 text-blue-600 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">Concordo com os termos e condições</span>
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-200 transform hover:scale-105 flex items-center">
+                                <i data-feather="send" class="w-5 h-5 mr-2"></i>
+                                Enviar Briefing
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="text-center mt-8 text-blue-100">
+                    <p>© 2023 Angry Cube. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            feather.replace();
+
+            // Toggle domain field
+            document.querySelectorAll('input[name="has_domain"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const domainField = document.querySelector('.domain-field');
+                    domainField.classList.toggle('hidden', this.value !== 'yes');
+                });
+            });
+
+            // Toggle hosting fields
+            document.querySelectorAll('input[name="has_hosting"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const hostingField = document.querySelector('.hosting-field');
+                    const hostingAccess = document.querySelector('.hosting-access');
+                    const show = this.value === 'yes';
+                    hostingField.classList.toggle('hidden', !show);
+                    hostingAccess.classList.toggle('hidden', !show);
+                });
+            });
+
+            // Custom checkbox effect
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const svg = this.nextElementSibling?.querySelector('svg');
+                    if (svg) svg.classList.toggle('hidden', !this.checked);
+                });
+            });
+
+            // Custom radio effect
+            document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const name = this.getAttribute('name');
+                    // Esconde apenas dentro do mesmo grupo
+                    document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+                        const check = r.closest('label')?.querySelector('.radio-check');
+                        if (check) check.classList.add('hidden');
+                    });
+                    // Mostra apenas o atual
+                    const activeCheck = this.closest('label')?.querySelector('.radio-check');
+                    if (activeCheck) activeCheck.classList.remove('hidden');
+                });
+            });
+
+            // ====== MODAL DE SUCESSO ======
+            const modalHTML = `
+            <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+                <div class="bg-white rounded-2xl p-8 max-w-md w-full text-center shadow-xl transform transition-all scale-95">
+                    <h2 class="text-2xl font-semibold text-blue-800 mb-3">Briefing enviado com sucesso! 🎉</h2>
+                    <p class="text-gray-600 mb-6">Recebemos seu formulário e entraremos em contato em breve.</p>
+                    <button id="closeModal" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition">
+                        Fechar
+                    </button>
+                </div>
+            </div>`;
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+            const modal = document.getElementById('successModal');
+            const closeModalBtn = document.getElementById('closeModal');
+            closeModalBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.classList.add('hidden');
+            });
+
+            // ====== ENVIO DO FORMULÁRIO ======
+            const form = document.querySelector("form");
+            const submitButton = form.querySelector('button[type="submit"]');
+
+            let isSubmitting = false; // trava para evitar duplicados
+
+            form.addEventListener("submit", async function(e) {
+                e.preventDefault();
+
+                // Verifica se há pelo menos 1 campo preenchido
+                const filled = Array.from(new FormData(form)).some(([_, v]) => v && v.trim() !== "");
+
+                if (!filled) {
+                    alert("Por favor, preencha ao menos um campo antes de enviar.");
+                    
+                    isSubmitting = false;
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = '<i data-feather="send" class="w-5 h-5 mr-2"></i> Enviar Briefing';
+                    feather.replace();
+                    return;
+                }
+
+                if (isSubmitting) return; // evita duplo clique
+
+                isSubmitting = true;
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<i data-feather="loader" class="w-5 h-5 mr-2 animate-spin"></i> Enviando...';
+                feather.replace();
+
+                const data = {};
+                new FormData(form).forEach((value, key) => {
+                    if (data[key]) {
+                        if (!Array.isArray(data[key])) data[key] = [data[key]];
+                        data[key].push(value);
+                    } else {
+                        data[key] = value;
+                    }
+                });
+
+                // Adiciona timestamp automático
+                data.timestamp = new Date().toLocaleString('pt-BR');
+
+                try {
+                    await fetch("https://script.google.com/macros/s/AKfycbwWYu2Pyi2rzyqwLZshih-T7mj5DaSMJq082lYX-QqYPUSYVxoVbqH6WOvvgwsO5TEzYw/exec", {
+                        method: "POST",
+                        mode: "no-cors",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(data)
+                    });
+
+                    form.reset();
+                    modal.classList.remove('hidden');
+                } catch (error) {
+                    alert("Ocorreu um erro ao enviar o briefing. Tente novamente.");
+                    console.error(error);
+                } finally {
+                    isSubmitting = false;
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = '<i data-feather="send" class="w-5 h-5 mr-2"></i> Enviar Briefing';
+                    feather.replace();
+                }
+            });
+        </script>
+    </body>
+</html>
