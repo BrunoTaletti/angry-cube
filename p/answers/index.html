@@ -7,6 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="shortcut icon" href="./../../img/icon.svg" type="image/x-icon" />
+
+    <!-- 🔹 Font Awesome para ícone de link externo -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
@@ -27,6 +34,7 @@
       .scrollbar-hide::-webkit-scrollbar {
         display: none;
       }
+
       .scrollbar-hide {
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -101,8 +109,25 @@
       /* --- LINKS --- */
       .linkified {
         color: #1e40af;
-        text-decoration: underline;
+        text-decoration: none;
         cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: transform 0.1s ease, color 0.2s ease;
+      }
+
+      .linkified:hover {
+        transform: scale(1.05);
+        color: #1e40af;
+      }
+
+      .linkified i {
+        font-size: 0.75rem;
+        margin-left: 2px;
+        vertical-align: middle;
+        position: relative;
+        top: 0.5px;
       }
     </style>
   </head>
@@ -209,7 +234,6 @@
       const modalContent = document.getElementById("modalContent");
       const closeModal = document.getElementById("closeModal");
 
-      // 🔹 Formata o timestamp
       function formatDate(ts) {
         if (!ts) return "";
         try {
@@ -232,45 +256,45 @@
         }
       }
 
-      // 🔹 Detecta HEX e links
       function formatValue(value) {
         if (!value) return "";
 
         const colorRegex = /#(?:[0-9a-fA-F]{3}){1,2}\b/g;
-        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        const urlRegex =
+          /\b((https?:\/\/)?(www\.)?[\w-]+\.(com|net|org|site|online|br|info|io|pro|app|co)(\/\S*)?)/gi;
 
         return value
           .split(/(\s+)/)
           .map((word) => {
             if (colorRegex.test(word)) {
               return `<span class="color-chip" onclick="copyColor(this, '${word}')">
-                    <span class="color-box" style="background:${word}"></span>
-                    <span class="color-text">${word}</span>
-                  </span>`;
+                        <span class="color-box" style="background:${word}"></span>
+                        <span class="color-text">${word}</span>
+                      </span>`;
             } else if (urlRegex.test(word)) {
-              return `<a href="${word}" target="_blank" class="linkified">${word}</a>`;
+              let href = word;
+              if (!/^https?:\/\//i.test(href)) {
+                href = "https://" + word;
+              }
+              return `<a href="${href}" target="_blank" class="linkified">${word}<i class="fas fa-external-link-alt"></i></a>`;
             }
             return word;
           })
           .join("");
       }
 
-      // 🔹 Copiar HEX com feedback visual
       function copyColor(element, color) {
         if (!element) return;
 
         navigator.clipboard.writeText(color).then(() => {
-          // remove tooltip anterior se houver
           const existing = element.querySelector(".copied-tooltip");
           if (existing) existing.remove();
 
-          // cria novo tooltip
           const tooltip = document.createElement("div");
           tooltip.className = "copied-tooltip";
           tooltip.textContent = "Copiado!";
           element.appendChild(tooltip);
 
-          // remove após animação
           setTimeout(() => {
             tooltip.remove();
           }, 1200);
@@ -303,15 +327,15 @@
 
           const tr = document.createElement("tr");
           tr.innerHTML = `
-        <td class="px-6 py-4 text-sm text-gray-700">${idValue}</td>
-        <td class="px-6 py-4 text-sm text-gray-700">${row.pages || "-"}</td>
-        <td class="px-6 py-4 text-sm text-gray-700">${dateValue || "-"}</td>
-        <td class="px-6 py-4 text-center">
-          <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1 rounded-lg text-sm transition view-btn" data-id="${idValue}">
-            <i data-feather="eye" class="w-4 h-4 inline-block mr-1"></i> Ver
-          </button>
-        </td>
-      `;
+            <td class="px-6 py-4 text-sm text-gray-700">${idValue}</td>
+            <td class="px-6 py-4 text-sm text-gray-700">${row.pages || "-"}</td>
+            <td class="px-6 py-4 text-sm text-gray-700">${dateValue || "-"}</td>
+            <td class="px-6 py-4 text-center">
+              <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1 rounded-lg text-sm transition view-btn" data-id="${idValue}">
+                <i data-feather="eye" class="w-4 h-4 inline-block mr-1"></i> Ver
+              </button>
+            </td>
+          `;
           tableBody.appendChild(tr);
         });
 
@@ -339,10 +363,94 @@
         const dateValue = formatDate(item.timestamp);
 
         modalHeader.innerHTML = `
-      <h2 class="text-2xl font-semibold text-blue-800 mb-1">Briefing #${idValue}</h2>
-      <p class="text-sm text-gray-500">Enviado em: ${dateValue || "-"}</p>
-      <div class="border-b border-gray-300 mt-2 mb-4"></div>
-    `;
+    <h2 class="text-2xl font-semibold text-blue-800 mb-1">Briefing #${idValue}</h2>
+    <p class="text-sm text-gray-500">Enviado em: ${dateValue || "-"}</p>
+    <div class="border-b border-gray-300 mt-2 mb-4"></div>
+  `;
+
+        const perguntasMap = {
+          // 1. Páginas contratadas
+          pages: "1. Quais são as duas páginas contratadas?",
+          other_pages: "1. Outra (especifique):",
+
+          // 2. Página 1
+          page1_objective: "2a. Qual o objetivo principal da Página 1?",
+          page1_sections: "2b. Quais sessões essa página precisa ter?",
+          page1_musthave:
+            "2c. Há alguma seção ou conteúdo que você faz questão de ter?",
+          page1_exclude:
+            "2d. Deseja que algo não esteja presente nessa página?",
+
+          // 3. Página 2
+          page2_objective: "3a. Qual o objetivo principal da Página 2?",
+          page2_sections: "3b. Quais sessões essa página precisa ter?",
+          page2_musthave:
+            "3c. Há alguma seção ou conteúdo que você faz questão de ter?",
+          page2_exclude:
+            "3d. Deseja que algo não esteja presente nessa página?",
+
+          // 4. Design e Identidade Visual
+          brand_manual: "4a. Possui manual de marca?",
+          typography:
+            "4b. Qual é a tipografia (fonte) da marca? Se não tiver, há alguma preferência?",
+          colors: "4c. Quais são as cores principais que devemos usar?",
+          avoid_colors:
+            "4d. Há cores, elementos ou estilos que não podem ser usados?",
+          visual_style: "4e. Há algum estilo visual que você espera?",
+
+          // 5. Conteúdo e Materiais
+          materials:
+            "5a. Você já possui algum material que deve ser usado no site?",
+          other_materials: "5a. Outros materiais (especifique)",
+          material_instructions:
+            "5a. Envie os arquivos ou o link para download:",
+          text_inclusions:
+            "5b. Há algo que você gostaria de garantir que esteja incluído nos textos?",
+
+          // 6. Produto / Serviço
+          product_service:
+            "6a. Qual é o produto ou serviço sendo apresentado neste projeto?",
+
+          // 7. Inspirações e Referências
+          reference1: "7a. Site de referência 1",
+          reference2: "7a. Site de referência 2",
+          reference3: "7a. Site de referência 3",
+          reference4: "7a. Site de referência 4 (opcional)",
+          reference5: "7a. Site de referência 5 (opcional)",
+          reference_details:
+            "7b. Algum detalhe específico dessas referências que você gostaria de reproduzir?",
+          reference_avoid:
+            "7c. Tem algo que você viu em outros sites que NÃO quer no seu?",
+
+          // 8. Tecnologia
+          tech_preference:
+            "8a. Você possui alguma preferência em relação à tecnologia usada no site?",
+          tech_limitations:
+            "8b. Existe alguma limitação técnica ou exigência específica?",
+
+          // 9. Posicionamento e Percepção
+          brand_vision:
+            "9a. Qual é a visão que você quer transmitir com esse site?",
+          user_feeling:
+            "9b. Como você quer que as pessoas se sintam ao navegar pelo seu site?",
+          target_audience: "9c. Quem é o público-alvo deste site?",
+          brand_perception:
+            "9d. Como você gostaria de ser visto por esse público?",
+
+          // 10. Domínio e Hospedagem
+          has_domain: "10a. Você já possui um domínio registrado?",
+          domain: "10a. Qual é o domínio?",
+          help_register: "10a. Precisa de ajuda para registrar?",
+          has_hosting: "10b. Já possui hospedagem contratada?",
+          hosting_provider: "10b. Qual provedor?",
+          hosting_access: "10b. Acesso será fornecido?",
+          hosting_help: "10b. Precisa de indicação ou contratação?",
+          cms_preference:
+            "10c. Tem preferência de tecnologia, plataforma ou CMS?",
+
+          // Confirmação
+          agree_terms: "Concordo com os termos e condições",
+        };
 
         const keys = Object.keys(item).filter(
           (k) =>
@@ -356,15 +464,16 @@
             "<p class='text-gray-500 italic'>Nenhuma resposta disponível.</p>";
         } else {
           keys.forEach((key) => {
+            const pergunta =
+              perguntasMap[key] || key.replaceAll("_", " ").toUpperCase();
             const value = formatValue(item[key]);
+
             modalContent.innerHTML += `
-          <div class="border-b border-gray-200 pb-2">
-            <h3 class="text-sm font-semibold text-blue-800">${key
-              .replaceAll("_", " ")
-              .toUpperCase()}</h3>
-            <p class="text-gray-700 whitespace-pre-wrap">${value}</p>
-          </div>
-        `;
+        <div class="border-b border-gray-200 pb-2">
+          <h3 class="text-sm font-semibold text-blue-800">${pergunta}</h3>
+          <p class="text-gray-700 whitespace-pre-wrap">${value}</p>
+        </div>
+      `;
           });
         }
 
