@@ -1,218 +1,424 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Angry Cube - Páginas de Alto Impacto</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="shortcut icon" href="./img/icon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/icon.svg" type="image/x-icon" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f8f9fa;
-        }
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
-        .logo{
-            width: 60%;
-        }
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #f8f9fa;
+      }
 
-        .hero-bg {
-            background-image: url('./img/background.jpg');
-            background-size: cover;
-            background-position: contain;
-            background-blend-mode: overlay;
-        }
+      .logo {
+        width: 60%;
+      }
 
-        .btn-primary {
-            transition: all 0.3s ease;
-        }
+      .hero-bg {
+        background-image: url("./img/background.jpg");
+        background-size: cover;
+        background-position: contain;
+        background-blend-mode: overlay;
+      }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
+      .btn-primary {
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
     </style>
-</head>
-<body class="min-h-screen bg-gray-50">
+  </head>
+  <body class="min-h-screen bg-gray-50">
     <!-- Header -->
     <header class="bg-blue-900 text-white shadow-lg">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <img src="./img/angry-cube-logo.svg" alt="Angry Cube Logo" class="logo h-13">
-                </div>
-                <nav class="hidden md:block">
-                    <ul class="flex space-x-8">
-                        <li><a href="#services" class="hover:text-blue-200 transition">Serviços</a></li>
-                        <li><a href="#about" class="hover:text-blue-200 transition">Sobre Nós</a></li>
-                        <li><a href="#contact" class="hover:text-blue-200 transition">Contato</a></li>
-                        <li><a href="/p/briefing" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition">Briefing</a></li>
-                    </ul>
-                </nav>
-            </div>
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <img
+              src="./img/angry-cube-logo.svg"
+              alt="Angry Cube Logo"
+              class="logo h-13"
+            />
+          </div>
+          <nav class="hidden md:block">
+            <ul class="flex space-x-8">
+              <li>
+                <a href="#services" class="hover:text-blue-200 transition"
+                  >Serviços</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="hover:text-blue-200 transition"
+                  >Sobre Nós</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-blue-200 transition"
+                  >Contato</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/p/briefing"
+                  class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition"
+                  >Briefing</a
+                >
+              </li>
+</ul>
+          </nav>
         </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero-bg bg-blue-800 text-white py-20 md:py-32">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">Transforme sua presença digital</h1>
-            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">Na Angry Cube, criamos experiências digitais que geram resultados reais para o seu negócio.</p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="https://wa.me/5511967708730" class="btn-primary bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg flex items-center justify-center">
-                    <i data-feather="message-circle" class="w-5 h-5 mr-2"></i>
-                    Fale Conosco
-                </a>
-                <a href="/p/briefing" class="btn-primary bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg flex items-center justify-center">
-                    <i data-feather="edit-3" class="w-5 h-5 mr-2"></i>
-                    Preencher Briefing
-                </a>
-            </div>
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          Transforme sua presença digital
+        </h1>
+        <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
+          Na Angry Cube, criamos experiências digitais que geram resultados
+          reais para o seu negócio.
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+          <a
+            href="https://wa.me/5511967708730"
+            class="btn-primary bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg flex items-center justify-center"
+          >
+            <i data-feather="message-circle" class="w-5 h-5 mr-2"></i>
+            Fale Conosco
+          </a>
+          <a
+            href="/p/briefing"
+            class="btn-primary bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg flex items-center justify-center"
+          >
+            <i data-feather="edit-3" class="w-5 h-5 mr-2"></i>
+            Preencher Briefing
+          </a>
         </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Quem Somos</h2>
-                    <p class="text-gray-700 mb-4">A Angry Cube é uma agência de marketing digital especializada em criar soluções inteligentes e eficientes para alavancar negócios no ambiente digital.</p>
-                    <p class="text-gray-700 mb-6">Nossa equipe é formada por especialistas em design, desenvolvimento, estratégia digital e análise de dados, trabalhando juntos para entregar projetos que realmente fazem a diferença.</p>
-                    <div class="flex space-x-4">
-                        <div class="bg-blue-100 p-4 rounded-lg">
-                            <i data-feather="award" class="w-6 h-6 text-blue-600 mb-2"></i>
-                            <h3 class="font-bold text-blue-900">Qualidade</h3>
-                            <p class="text-sm text-gray-600">Padrão de excelência em todos os projetos</p>
-                        </div>
-                        <div class="bg-blue-100 p-4 rounded-lg">
-                            <i data-feather="zap" class="w-6 h-6 text-blue-600 mb-2"></i>
-                            <h3 class="font-bold text-blue-900">Performance</h3>
-                            <p class="text-sm text-gray-600">Resultados que impulsionam seu negócio</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:w-1/2">
-                    <img src="http://static.photos/workspace/640x360/10" alt="Equipe Angry Cube" class="rounded-lg shadow-xl">
-                </div>
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+            <h2 class="text-3xl font-bold text-blue-900 mb-6">Quem Somos</h2>
+            <p class="text-gray-700 mb-4">
+              A Angry Cube é uma agência de marketing digital especializada em
+              criar soluções inteligentes e eficientes para alavancar negócios
+              no ambiente digital.
+            </p>
+            <p class="text-gray-700 mb-6">
+              Nossa equipe é formada por especialistas em design,
+              desenvolvimento, estratégia digital e análise de dados,
+              trabalhando juntos para entregar projetos que realmente fazem a
+              diferença.
+            </p>
+            <div class="flex space-x-4">
+              <div class="bg-blue-100 p-4 rounded-lg">
+                <i data-feather="award" class="w-6 h-6 text-blue-600 mb-2"></i>
+                <h3 class="font-bold text-blue-900">Qualidade</h3>
+                <p class="text-sm text-gray-600">
+                  Padrão de excelência em todos os projetos
+                </p>
+              </div>
+              <div class="bg-blue-100 p-4 rounded-lg">
+                <i data-feather="zap" class="w-6 h-6 text-blue-600 mb-2"></i>
+                <h3 class="font-bold text-blue-900">Performance</h3>
+                <p class="text-sm text-gray-600">
+                  Resultados que impulsionam seu negócio
+                </p>
+              </div>
             </div>
+          </div>
+          <div class="md:w-1/2">
+            <img
+              src="http://static.photos/workspace/640x360/10"
+              alt="Equipe Angry Cube"
+              class="rounded-lg shadow-xl"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-16">Nossos Serviços</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                        <i data-feather="layout" class="w-8 h-8 text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Web Design</h3>
-                    <p class="text-gray-600">Criação de sites modernos, responsivos e otimizados para conversão.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                        <i data-feather="bar-chart-2" class="w-8 h-8 text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Marketing Digital</h3>
-                    <p class="text-gray-600">Estratégias completas para aumentar sua presença e resultados online.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                        <i data-feather="shopping-cart" class="w-8 h-8 text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">E-commerce</h3>
-                    <p class="text-gray-600">Lojas virtuais completas com integração de pagamentos e logística.</p>
-                </div>
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-blue-900 mb-16">
+          Nossos Serviços
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition"
+          >
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6"
+            >
+              <i data-feather="layout" class="w-8 h-8 text-blue-600"></i>
             </div>
+            <h3 class="text-xl font-bold text-blue-900 mb-3">Web Design</h3>
+            <p class="text-gray-600">
+              Criação de sites modernos, responsivos e otimizados para
+              conversão.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition"
+          >
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6"
+            >
+              <i data-feather="bar-chart-2" class="w-8 h-8 text-blue-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-blue-900 mb-3">
+              Marketing Digital
+            </h3>
+            <p class="text-gray-600">
+              Estratégias completas para aumentar sua presença e resultados
+              online.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition"
+          >
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6"
+            >
+              <i data-feather="shopping-cart" class="w-8 h-8 text-blue-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-blue-900 mb-3">E-commerce</h3>
+            <p class="text-gray-600">
+              Lojas virtuais completas com integração de pagamentos e logística.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section id="contact" class="py-20 bg-blue-800 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6">Pronto para transformar seu negócio?</h2>
-            <p class="text-xl mb-10 max-w-2xl mx-auto">Entre em contato conosco e descubra como podemos ajudar você a alcançar seus objetivos digitais.</p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="https://wa.me/5511967708730" class="btn-primary bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg flex items-center justify-center">
-                    <i data-feather="message-circle" class="w-5 h-5 mr-2"></i>
-                    WhatsApp
-                </a>
-                <a href="/p/briefing" class="btn-primary bg-white hover:bg-gray-100 text-blue-800 font-bold py-3 px-8 rounded-lg shadow-lg flex items-center justify-center">
-                    <i data-feather="edit-3" class="w-5 h-5 mr-2"></i>
-                    Preencher Briefing
-                </a>
-            </div>
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-6">
+          Pronto para transformar seu negócio?
+        </h2>
+        <p class="text-xl mb-10 max-w-2xl mx-auto">
+          Entre em contato conosco e descubra como podemos ajudar você a
+          alcançar seus objetivos digitais.
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+          <a
+            href="https://wa.me/5511967708730"
+            class="btn-primary bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg flex items-center justify-center"
+          >
+            <i data-feather="message-circle" class="w-5 h-5 mr-2"></i>
+            WhatsApp
+          </a>
+          <a
+            href="/p/briefing"
+            class="btn-primary bg-white hover:bg-gray-100 text-blue-800 font-bold py-3 px-8 rounded-lg shadow-lg flex items-center justify-center"
+          >
+            <i data-feather="edit-3" class="w-5 h-5 mr-2"></i>
+            Preencher Briefing
+          </a>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between">
-                <div class="mb-8 md:mb-0">
-                    <div class="flex items-center mb-4">
-                        <img src="./img/angry-cube-logo.svg" alt="Angry Cube Logo" class="logo h-10">
-                    </div>
-                    <p class="text-gray-400 max-w-md">Transformando ideias em soluções digitais inteligentes e eficientes.</p>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-                    <div>
-                        <h3 class="text-lg font-bold mb-4">Links</h3>
-                        <ul class="space-y-2">
-                            <li><a href="#services" class="text-gray-400 hover:text-white transition">Serviços</a></li>
-                            <li><a href="#about" class="text-gray-400 hover:text-white transition">Sobre Nós</a></li>
-                            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contato</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold mb-4">Serviços</h3>
-                        <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">Web Design</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">Marketing Digital</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">E-commerce</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold mb-4">Contato</h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-center"><i data-feather="mail" class="w-4 h-4 mr-2"></i> <a href="mailto:contato@angrycube.pro" class="text-gray-400 hover:text-white transition">contato@angrycube.pro</a></li>
-                            <li class="flex items-center"><i data-feather="phone" class="w-4 h-4 mr-2"></i> <a href="tel:+5511967708730" class="text-gray-400 hover:text-white transition">(11) 96770-8730</a></li>
-                        </ul>
-                    </div>
-                </div>
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div class="mb-8 md:mb-0">
+            <div class="flex items-center mb-4">
+              <img
+                src="./img/angry-cube-logo.svg"
+                alt="Angry Cube Logo"
+                class="logo h-10"
+              />
             </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>© 2023 Angry Cube. Todos os direitos reservados.</p>
+            <p class="text-gray-400 max-w-md">
+              Transformando ideias em soluções digitais inteligentes e
+              eficientes.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-lg font-bold mb-4">Links</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="#services"
+                    class="text-gray-400 hover:text-white transition"
+                    >Serviços</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#about"
+                    class="text-gray-400 hover:text-white transition"
+                    >Sobre Nós</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    class="text-gray-400 hover:text-white transition"
+                    >Contato</a
+                  >
+                </li>
+              </ul>
             </div>
+            <div>
+              <h3 class="text-lg font-bold mb-4">Serviços</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition"
+                    >Web Design</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition"
+                    >Marketing Digital</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition"
+                    >E-commerce</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold mb-4">Contato</h3>
+              <ul class="space-y-2">
+                <li class="flex items-center">
+                  <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                  <a
+                    href="mailto:contato@angrycube.pro"
+                    class="text-gray-400 hover:text-white transition"
+                    >contato@angrycube.pro</a
+                  >
+                </li>
+                <li class="flex items-center">
+                  <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                  <a
+                    href="tel:+5511967708730"
+                    class="text-gray-400 hover:text-white transition"
+                    >(11) 96770-8730</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
+        >
+          <p>© 2023 Angry Cube. Todos os direitos reservados.</p>
+        </div>
+      </div>
     </footer>
 
     <script>
-        feather.replace();
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+      feather.replace();
+      // Adicionar link de respostas no nav se dev=true
+      (function() {
+        const params = new URLSearchParams(window.location.search);
+        const isDev = params.get("dev") === "true";
+        if (!isDev) return;
 
-        // Mobile menu toggle would go here
-    </script>
-</body>
+        const nav = document.querySelector('nav ul');
+        if (!nav) return;
+
+        const answersItem = document.createElement('li');
+        answersItem.innerHTML = `
+          <a
+            href="/p/answers"
+            class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg transition"
+            >Respostas</a
+          >
+        `;
+        nav.appendChild(answersItem);
+
+        feather.replace();
+      })();
+
+      // Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+      // Função para exibir botão "Respostas" se o parâmetro dev=true estiver presente
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const isDev = params.get("dev") === "true";
+        if (!isDev) return;
+
+        const heroSection = document.querySelector('.hero-bg');
+        const ctaSection = document.querySelector('#contact');
+
+        // Criar botão respostas para hero section
+        const heroBriefingBtn = heroSection.querySelector('a[href="/p/briefing"]');
+        if (heroBriefingBtn) {
+          const heroAnswersBtn = document.createElement("a");
+          heroAnswersBtn.href = "https://angrycube.pro/p/answers";
+          heroAnswersBtn.className =
+            "btn-primary bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg flex items-center justify-center animate-pulse";
+          heroAnswersBtn.innerHTML =
+            '<i data-feather="check-circle" class="w-5 h-5 mr-2"></i>Ver Respostas';
+
+          heroBriefingBtn.parentNode.insertBefore(
+            heroAnswersBtn,
+            heroBriefingBtn.nextSibling
+          );
+        }
+
+        // Criar botão respostas para CTA section
+        const ctaBriefingBtn = ctaSection.querySelector('a[href="/p/briefing"]');
+        if (ctaBriefingBtn) {
+          const ctaAnswersBtn = document.createElement("a");
+          ctaAnswersBtn.href = "https://angrycube.pro/p/answers";
+          ctaAnswersBtn.className =
+            "btn-primary bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg flex items-center justify-center animate-pulse";
+          ctaAnswersBtn.innerHTML =
+            '<i data-feather="check-circle" class="w-5 h-5 mr-2"></i>Ver Respostas';
+
+          ctaBriefingBtn.parentNode.insertBefore(
+            ctaAnswersBtn,
+            ctaBriefingBtn.nextSibling
+          );
+        }
+
+        // Adicionar badge de desenvolvimento
+        const devBadge = document.createElement('div');
+        devBadge.className = 'fixed bottom-4 right-4 bg-yellow-500 text-white font-bold px-4 py-2 rounded-full shadow-lg z-50 flex items-center';
+        devBadge.innerHTML = '<i data-feather="code" class="w-4 h-4 mr-2"></i> Modo Desenvolvedor';
+        document.body.appendChild(devBadge);
+
+        feather.replace();
+      })();
+</script>
+  </body>
 </html>
